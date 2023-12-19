@@ -8,9 +8,9 @@ import { ContactForm } from './ContactForm/ContactForm';
 import { ContactList } from './ContactList/ContactList';
 import { Filter } from './Filter/Filter';
 import { StyledTitle } from './Filter/Filter.styled';
-import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchContacts } from 'api/contacts-api';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchContacts } from '../api/contacts-api';
 
 export const App = () => {
   const filter = useSelector(selectFilters);
@@ -47,7 +47,7 @@ export const App = () => {
       {filteredContacts.length ? (
         <>
           <StyledTitle>Find contacts by name</StyledTitle>
-          <ContactList items={filteredContacts} />
+          <ContactList />
         </>
       ) : (
         <StyledTitle>There are no contacts yet!</StyledTitle>

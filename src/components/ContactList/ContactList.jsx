@@ -5,8 +5,8 @@ import { deleteContact } from 'api/contacts-api';
 import { selectContacts, selectFilters } from '../../redux/selectors';
 
 export const ContactList = () => {
-  const contacts = useSelector(selectContacts);
   const filter = useSelector(selectFilters);
+  const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
 
   const filteredContacts = contacts.filter(contact =>
